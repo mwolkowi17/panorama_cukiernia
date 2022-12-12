@@ -58,3 +58,7 @@
 #info{
     color: gray;
 } 
+
+.imagenav{
+    cursor: pointer;
+}
