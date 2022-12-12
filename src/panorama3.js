@@ -1,9 +1,8 @@
 import * as THREE from 'three';
 import { CSS3DObject } from 'three/addons/renderers/CSS3DRenderer.js';
 import { scene } from './index.js';
-import { panorama1 } from './panorama1.js';
+import { panorama2 } from './panorama2.js';
 import { display } from './display_panorama1';
-import { panorama3 } from './panorama3.js';
 
 //panorama image
 
@@ -11,78 +10,53 @@ const geometry = new THREE.SphereGeometry(500, 60, 40);
 // invert the geometry on the x-axis so that all of the faces point inward
 geometry.scale(- 1, 1, 1);
 
-const texture = new THREE.TextureLoader().load('./kawiarnia3.png');
+const texture = new THREE.TextureLoader().load('./kawiarnia4.png');
 const material = new THREE.MeshBasicMaterial({ map: texture });
 
-// function panoramaAdd(){
-//   const panorama2 = new THREE.Mesh(geometry, material);
-//   return panorama2;
-// }
+function panoramaAdd(){
+  const panorama = new THREE.Mesh(geometry, material);
+  return panorama;
+}
 
 //export const panorama1 = new THREE.Mesh(geometry, material);
-export const panorama2 = new THREE.Mesh(geometry, material);
+export const panorama3 = panoramaAdd();
 
 
 
 //navigation
 
-//nav element1
 const imageDiv = document.createElement('img');
 imageDiv.className = 'imagenav';
-imageDiv.id= 'nav2';
+imageDiv.id = 'nav4'
 imageDiv.src = './pap_circle_up.png'
 imageDiv.height = '5';
 imageDiv.width = '5';
 imageDiv.style.visibility = 'visible'
 
 const navLabel = new CSS3DObject(imageDiv);
-navLabel.position.set(20, -13, -30);
+navLabel.position.set(14, -18, 30);
 navLabel.element.style.overflow = 'visible';
 
-panorama2.add(navLabel)
+panorama3.add(navLabel)
 
-//nav element2
 
-const imageDiv2 = document.createElement('img');
-imageDiv2.className = 'imagenav';
-imageDiv2.id= 'nav3';
-imageDiv2.src = './pap_circle_up.png'
-imageDiv2.height = '5';
-imageDiv2.width = '5';
-imageDiv2.style.visibility = 'visible'
-
-const navLabel2 = new CSS3DObject(imageDiv2);
-navLabel2.position.set(-7, -13, 40);
-navLabel2.element.style.overflow = 'visible';
-
-panorama2.add(navLabel2)
 
 // navigation actions
 
 imageDiv.addEventListener('pointerdown', () => {
     console.log('click');
-     scene.remove(panorama2);
+   
+     scene.remove(panorama3);
      imageDiv.style.visibility='hidden';
-     imageDiv2.style.visibility='hidden';
      imageDivInfo.style.visibility='hidden';
-     scene.add(panorama1);
-     const nav1 = document.getElementById('nav1');
-     nav1.style.visibility='visible';
+     
+     scene.add(panorama2);
+     const nav2 = document.getElementById('nav2');
+     nav2.style.visibility='visible';
+     const nav3 = document.getElementById('nav3');
+     nav3.style.visibility='visible';
    
 })
-
-imageDiv2.addEventListener('pointerdown', () => {
-  console.log('click2');
-   scene.remove(panorama2);
-   imageDiv.style.visibility='hidden';
-   imageDiv2.style.visibility='hidden';
-   imageDivInfo.style.visibility='hidden';
-   scene.add(panorama3);
-   const nav3 = document.getElementById('nav4');
-   nav3.style.visibility='visible';
- 
-})
-
 
 // info nav
 
@@ -94,7 +68,7 @@ imageDivInfo.width = '5';
 imageDivInfo.style.visibility = 'visible'
 
 const navLabelInfo = new CSS3DObject(imageDivInfo);
-navLabelInfo.position.set(30, 0, -30);
+navLabelInfo.position.set(20, 0, -30);
 navLabelInfo.element.style.overflow = 'visible';
 
 //1st option
@@ -102,7 +76,7 @@ navLabelInfo.element.style.overflow = 'visible';
 
 //2nd option with setTimeout callback
 // setTimeout(function(){
-//   panorama2.add(navLabelInfo)
+//   panorama1.add(navLabelInfo)
 // },500)
 
 
