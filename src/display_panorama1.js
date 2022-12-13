@@ -1,9 +1,9 @@
+//display_info_1
 export const display = document.createElement('div');
 display.className = 'display';
 display.id = 'display';
-//display.style.backgroundColor = 'rgba(0,177,255,' + (Math.random() * 0.5 + 0.25) + ')';
 display.style.backgroundColor = 'rgba(255,255,255,0.5)';
-display.textContent = "Valve model no.7";
+display.textContent = "Stairs in the park";
 display.style.color='black'
 display.style.height = "520px";
 display.style.width = "400px";

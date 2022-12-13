@@ -3,6 +3,7 @@ import { CSS3DObject } from 'three/addons/renderers/CSS3DRenderer.js';
 import { scene } from './index.js';
 import { panorama2 } from './panorama2.js';
 import { display } from './display_panorama1';
+import { create_info_icon } from './info_icon.js';
 
 //panorama image
 
@@ -18,7 +19,7 @@ function panoramaAdd() {
   return panorama;
 }
 
-//export const panorama1 = new THREE.Mesh(geometry, material);
+
 export const panorama1 = panoramaAdd();
 
 
@@ -73,11 +74,12 @@ imageDivInfo.width = '5';
 imageDivInfo.style.visibility = 'visible'
 
 const navLabelInfo = new CSS3DObject(imageDivInfo);
-navLabelInfo.position.set(20, 0, -30);
+navLabelInfo.position.set(-30, 0, 30);
 navLabelInfo.element.style.overflow = 'visible';
 
 //1st option
-//panorama1.add(navLabelInfo)
+//const imageDivInfo = create_info_icon(30,0,-30,'imageInfo1')
+panorama1.add(navLabelInfo)
 
 //2nd option with setTimeout callback
 // setTimeout(function(){
