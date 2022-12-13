@@ -37,6 +37,17 @@ navLabel.element.style.overflow = 'visible';
 
 panorama1.add(navLabel)
 
+//mouse action
+imageDiv.addEventListener('mouseover', () => {
+  imageDiv.height = '6';
+  imageDiv.width = '6';
+})
+imageDiv.addEventListener('mouseleave', () => {
+  imageDiv.height = '5';
+  imageDiv.width = '5';
+}
+)
+
 
 // navigation actions
 
@@ -58,9 +69,9 @@ imageDiv.addEventListener('pointerdown', () => {
 
   }
 
-  if (document.getElementById('display1')){
+  if (document.getElementById('display1')) {
     const display1 = document.getElementById('display1');
-    display1.style.visibility='hidden';
+    display1.style.visibility = 'hidden';
   }
 
 })
@@ -80,6 +91,17 @@ navLabelInfo.position.set(-30, 0, 30);
 navLabelInfo.element.style.overflow = 'visible';
 
 panorama1.add(navLabelInfo)
+
+//mouse action
+imageDivInfo.addEventListener('mouseover', () => {
+  imageDivInfo.height = '6';
+  imageDivInfo.width = '6';
+})
+imageDivInfo.addEventListener('mouseleave', () => {
+  imageDivInfo.height = '5';
+  imageDivInfo.width = '5';
+}
+)
 
 
 //info actiones

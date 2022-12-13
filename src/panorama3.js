@@ -39,6 +39,17 @@ navLabel.element.style.overflow = 'visible';
 
 panorama3.add(navLabel)
 
+//mouse action
+imageDiv.addEventListener('mouseover', () => {
+  imageDiv.height = '6';
+  imageDiv.width = '6';
+})
+imageDiv.addEventListener('mouseleave', () => {
+  imageDiv.height = '5';
+  imageDiv.width = '5';
+}
+)
+
 
 
 // navigation actions
@@ -50,14 +61,14 @@ imageDiv.addEventListener('pointerdown', () => {
   imageDivInfo.style.visibility = 'hidden';
 
   scene.add(panorama2);
-  
-    const nav2 = document.getElementById('nav2');
-    nav2.style.visibility = 'visible';
-  
- 
-    const nav3 = document.getElementById('nav3');
-    nav3.style.visibility = 'visible';
-  
+
+  const nav2 = document.getElementById('nav2');
+  nav2.style.visibility = 'visible';
+
+
+  const nav3 = document.getElementById('nav3');
+  nav3.style.visibility = 'visible';
+
 
 
 })

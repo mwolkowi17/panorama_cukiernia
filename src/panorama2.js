@@ -14,12 +14,6 @@ geometry.scale(- 1, 1, 1);
 const texture = new THREE.TextureLoader().load('./kawiarnia3.png');
 const material = new THREE.MeshBasicMaterial({ map: texture });
 
-// function panoramaAdd(){
-//   const panorama2 = new THREE.Mesh(geometry, material);
-//   return panorama2;
-// }
-
-//export const panorama1 = new THREE.Mesh(geometry, material);
 export const panorama2 = new THREE.Mesh(geometry, material);
 
 
@@ -41,6 +35,17 @@ navLabel.element.style.overflow = 'visible';
 
 panorama2.add(navLabel)
 
+//mouse action
+imageDiv.addEventListener('mouseover', () => {
+  imageDiv.height = '6';
+  imageDiv.width = '6';
+})
+imageDiv.addEventListener('mouseleave', () => {
+  imageDiv.height = '5';
+  imageDiv.width = '5';
+}
+)
+
 //nav element2
 
 const imageDiv2 = document.createElement('img');
@@ -56,6 +61,17 @@ navLabel2.position.set(-7, -13, 40);
 navLabel2.element.style.overflow = 'visible';
 
 panorama2.add(navLabel2)
+
+//mouse action
+imageDiv2.addEventListener('mouseover', () => {
+  imageDiv2.height = '6';
+  imageDiv2.width = '6';
+})
+imageDiv2.addEventListener('mouseleave', () => {
+  imageDiv2.height = '5';
+  imageDiv2.width = '5';
+}
+)
 
 // navigation actions
 
