@@ -29,7 +29,7 @@ export const panorama2 = new THREE.Mesh(geometry, material);
 //nav element1
 const imageDiv = document.createElement('img');
 imageDiv.className = 'imagenav';
-imageDiv.id= 'nav2';
+imageDiv.id = 'nav2';
 imageDiv.src = './pap_circle_up.png'
 imageDiv.height = '5';
 imageDiv.width = '5';
@@ -45,7 +45,7 @@ panorama2.add(navLabel)
 
 const imageDiv2 = document.createElement('img');
 imageDiv2.className = 'imagenav';
-imageDiv2.id= 'nav3';
+imageDiv2.id = 'nav3';
 imageDiv2.src = './pap_circle_up.png'
 imageDiv2.height = '5';
 imageDiv2.width = '5';
@@ -60,27 +60,30 @@ panorama2.add(navLabel2)
 // navigation actions
 
 imageDiv.addEventListener('pointerdown', () => {
-    console.log('click');
-     scene.remove(panorama2);
-     imageDiv.style.visibility='hidden';
-     imageDiv2.style.visibility='hidden';
-     imageDivInfo.style.visibility='hidden';
-     scene.add(panorama1);
-     const nav1 = document.getElementById('nav1');
-     nav1.style.visibility='visible';
-   
+
+  scene.remove(panorama2);
+  imageDiv.style.visibility = 'hidden';
+  imageDiv2.style.visibility = 'hidden';
+  imageDivInfo.style.visibility = 'hidden';
+  scene.add(panorama1);
+  const nav1 = document.getElementById('nav1');
+  nav1.style.visibility = 'visible';
+
 })
 
 imageDiv2.addEventListener('pointerdown', () => {
-  console.log('click2');
-   scene.remove(panorama2);
-   imageDiv.style.visibility='hidden';
-   imageDiv2.style.visibility='hidden';
-   imageDivInfo.style.visibility='hidden';
-   scene.add(panorama3);
-   const nav3 = document.getElementById('nav4');
-   nav3.style.visibility='visible';
- 
+
+  scene.remove(panorama2);
+  imageDiv.style.visibility = 'hidden';
+  imageDiv2.style.visibility = 'hidden';
+  imageDivInfo.style.visibility = 'hidden';
+  scene.add(panorama3);
+  if (document.getElementById('nav4')) {
+    const nav3 = document.getElementById('nav4');
+    nav3.style.visibility = 'visible';
+  }
+
+
 })
 
 
@@ -115,8 +118,8 @@ imageDivInfo.addEventListener('pointerdown', () => {
   //infoDiv.style.visibility='visible';
   imageDivInfo.style.visibility = 'hidden';
   document.body.appendChild(display);
-  display.style.visibility='visible';
+  display.style.visibility = 'visible';
 
-  
+
 })
 

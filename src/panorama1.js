@@ -13,7 +13,7 @@ geometry.scale(- 1, 1, 1);
 const texture = new THREE.TextureLoader().load('./index.png');
 const material = new THREE.MeshBasicMaterial({ map: texture });
 
-function panoramaAdd(){
+function panoramaAdd() {
   const panorama = new THREE.Mesh(geometry, material);
   return panorama;
 }
@@ -44,18 +44,23 @@ panorama1.add(navLabel)
 // navigation actions
 
 imageDiv.addEventListener('pointerdown', () => {
-    console.log('click');
-   
-     scene.remove(panorama1);
-     imageDiv.style.visibility='hidden';
-     imageDivInfo.style.visibility='hidden';
-     
-     scene.add(panorama2);
-     const nav2 = document.getElementById('nav2');
-     nav2.style.visibility='visible';
-     const nav3 = document.getElementById('nav3');
-     nav3.style.visibility='visible';
-   
+
+
+  scene.remove(panorama1);
+  imageDiv.style.visibility = 'hidden';
+  imageDivInfo.style.visibility = 'hidden';
+
+  scene.add(panorama2);
+  if (document.getElementById('nav2')) {
+    const nav2 = document.getElementById('nav2');
+    nav2.style.visibility = 'visible';
+  }
+  if (document.getElementById('nav3')) {
+    const nav3 = document.getElementById('nav3');
+    nav3.style.visibility = 'visible';
+
+  }
+
 })
 
 // info nav
@@ -89,8 +94,8 @@ imageDivInfo.addEventListener('pointerdown', () => {
   //infoDiv.style.visibility='visible';
   imageDivInfo.style.visibility = 'hidden';
   document.body.appendChild(display);
-  display.style.visibility='visible';
+  display.style.visibility = 'visible';
 
-  
+
 })
 
