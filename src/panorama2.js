@@ -68,6 +68,8 @@ imageDiv.addEventListener('pointerdown', () => {
   scene.add(panorama1);
   const nav1 = document.getElementById('nav1');
   nav1.style.visibility = 'visible';
+  const info1 = document.getElementById('imageInfo1');
+  info1.style.visibility = 'visible';
 
 })
 

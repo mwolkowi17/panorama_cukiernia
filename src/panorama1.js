@@ -3,7 +3,6 @@ import { CSS3DObject } from 'three/addons/renderers/CSS3DRenderer.js';
 import { scene } from './index.js';
 import { panorama2 } from './panorama2.js';
 import { display } from './display_panorama1';
-import { create_info_icon } from './info_icon.js';
 
 //panorama image
 
@@ -19,9 +18,7 @@ function panoramaAdd() {
   return panorama;
 }
 
-
 export const panorama1 = panoramaAdd();
-
 
 
 //navigation
@@ -39,7 +36,6 @@ navLabel.position.set(-12, -18, -30);
 navLabel.element.style.overflow = 'visible';
 
 panorama1.add(navLabel)
-
 
 
 // navigation actions
@@ -62,12 +58,18 @@ imageDiv.addEventListener('pointerdown', () => {
 
   }
 
+  if (document.getElementById('display1')){
+    const display1 = document.getElementById('display1');
+    display1.style.visibility='hidden';
+  }
+
 })
 
 // info nav
 
 const imageDivInfo = document.createElement('img');
 imageDivInfo.className = 'imageInfo1';
+imageDivInfo.id = 'imageInfo1'
 imageDivInfo.src = './pap_spot_white.png'
 imageDivInfo.height = '5';
 imageDivInfo.width = '5';
@@ -77,22 +79,13 @@ const navLabelInfo = new CSS3DObject(imageDivInfo);
 navLabelInfo.position.set(-30, 0, 30);
 navLabelInfo.element.style.overflow = 'visible';
 
-//1st option
-//const imageDivInfo = create_info_icon(30,0,-30,'imageInfo1')
 panorama1.add(navLabelInfo)
-
-//2nd option with setTimeout callback
-// setTimeout(function(){
-//   panorama1.add(navLabelInfo)
-// },500)
-
-
 
 
 //info actiones
 
 imageDivInfo.addEventListener('pointerdown', () => {
-  console.log('click_info');
+
   //infoDiv.style.visibility='visible';
   imageDivInfo.style.visibility = 'hidden';
   document.body.appendChild(display);

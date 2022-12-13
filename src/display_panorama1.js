@@ -1,7 +1,7 @@
 //display_info_1
 export const display = document.createElement('div');
 display.className = 'display';
-display.id = 'display';
+display.id = 'display1';
 display.style.backgroundColor = 'rgba(255,255,255,0.5)';
 display.textContent = "Stairs in the park";
 display.style.color='black'
