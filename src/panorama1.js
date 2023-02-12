@@ -62,10 +62,14 @@ imageDiv.addEventListener('pointerdown', () => {
   if (document.getElementById('nav2')) {
     const nav2 = document.getElementById('nav2');
     nav2.style.visibility = 'visible';
+    imageDiv.height = '5';
+    imageDiv.width = '5';
   }
   if (document.getElementById('nav3')) {
     const nav3 = document.getElementById('nav3');
     nav3.style.visibility = 'visible';
+    imageDiv.height = '5';
+    imageDiv.width = '5';
 
   }
 
