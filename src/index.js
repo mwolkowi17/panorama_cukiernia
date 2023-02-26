@@ -29,6 +29,7 @@ camera.position.z = 5;
 const controls = new OrbitControls(camera, labelRenderer.domElement);
 controls.update();
 controls.enableZoom=false;
+controls.enableDamping = true;
 
 const animate = function () {
     requestAnimationFrame(animate);
