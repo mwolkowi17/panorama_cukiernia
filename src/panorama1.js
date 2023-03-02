@@ -35,7 +35,10 @@ const navLabel = new CSS3DObject(imageDiv);
 navLabel.position.set(-12, -18, -30);
 navLabel.element.style.overflow = 'visible';
 
-panorama1.add(navLabel)
+setTimeout(() => {
+  panorama1.add(navLabel)
+}, 1000)
+
 
 //mouse action
 imageDiv.addEventListener('mouseover', () => {
@@ -94,7 +97,9 @@ const navLabelInfo = new CSS3DObject(imageDivInfo);
 navLabelInfo.position.set(-30, 0, 30);
 navLabelInfo.element.style.overflow = 'visible';
 
-panorama1.add(navLabelInfo)
+setTimeout(() => {
+  panorama1.add(navLabelInfo)
+}, 1000)
 
 //mouse action
 imageDivInfo.addEventListener('mouseover', () => {
